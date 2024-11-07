@@ -1,5 +1,5 @@
 temp <- tempfile()
-download.file("https://cnes.datasus.gov.br/EstatisticasServlet?path=CEP_BRASIL.ZIP", "CEP_BRASIL.zip", mode='wb')
+download.file("ftp://ftp.datasus.gov.br/cnes/CEP_BRASIL.ZIP", "CEP_BRASIL.zip", mode='wb')
 
 file_cep <- unz("CEP_BRASIL.zip", "CEP.txt")
 file_cep_alterado <- unz("CEP_BRASIL.zip", "CEPALTERADO.txt")
