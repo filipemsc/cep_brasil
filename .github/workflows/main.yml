@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add cep.rds cep_alterado.rds
+          git add cep.rds cep_alterado.rds base_nrow.csv
           git commit -m "Update CEPs"
 
       # Step 6: Push the changes back to the repository
