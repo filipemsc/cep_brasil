@@ -14,6 +14,7 @@ saveRDS(cep, "cep.rds")
 saveRDS(cep_alterado, "cep_alterado.rds")
 
 df <- read.csv("base_nrow.csv")
-df_nova <- data.frame(data = Sys.Date(), nrow_cep = nrow(cep), nrow_cep_alterado = nrow(cep_alterado))
+df_nova <- data.frame(data = as.character(Sys.Date()), nrow_cep = nrow(cep), nrow_cep_alterado = nrow(cep_alterado))
 df <- rbind(df, df_nova)
 write.csv(df, "base_nrow.csv", row.names= FALSE)
+
