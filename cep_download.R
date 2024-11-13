@@ -1,4 +1,3 @@
-temp <- tempfile()
 download.file("ftp://ftp.datasus.gov.br/cnes/CEP_BRASIL.ZIP", "CEP_BRASIL.zip", mode='wb')
 
 file_cep <- unz("CEP_BRASIL.zip", "CEP.txt")
@@ -17,3 +16,5 @@ df <- read.csv("base_nrow.csv")
 df_nova <- data.frame(data = as.character(Sys.Date()), nrow_cep = nrow(cep), nrow_cep_alterado = nrow(cep_alterado))
 df <- rbind(df, df_nova)
 write.csv(df, "base_nrow.csv", row.names= FALSE)
+
+file.remove("CEP_BRASIL.zip")
